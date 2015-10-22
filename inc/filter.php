@@ -97,6 +97,7 @@ class DWQA_Filter {
 			}
 			echo '<p class="not-found">';
 			 _e( 'Sorry, but nothing matched your filter. ', 'dwqa' );
+			if (0):
 			if ( is_user_logged_in() ) {
 				global $dwqa_options;
 				if ( isset( $dwqa_options['pages']['submit-question']) ) {
@@ -122,6 +123,7 @@ class DWQA_Filter {
 				}
 				_e( ' to submit question.','dwqa' );
 			 }
+			endif;
 
 			echo  '</p>';
 			$results = ob_get_contents();
