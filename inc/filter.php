@@ -196,7 +196,7 @@ class DWQA_Filter {
 			case 'open' :
 				$args['meta_query'][] = array(
 				   'key' => '_dwqa_status',
-				   'value' => array( 'open', 're-open', 'pending' ),
+				   'value' => array( 'open', 're-open', 'pending', 'answered' ),
 				   'compare' => 'IN',
 				);
 				//not have answered by admin
