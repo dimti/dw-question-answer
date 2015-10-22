@@ -103,13 +103,17 @@ if ( dwqa_current_user_can( 'post_answer' ) ) {
 		<div class="alert"><?php _e( 'You do not have permission to submit answer.','dwqa' ) ?></div>
 	<?php } else { ?>
 	<h3 class="dwqa-title">
-		<?php 
-			printf( '%1$s <a href="%2$s" title="%3$s">%3$s</a> %4$s', __( 'Please login or', 'dwqa' ), wp_registration_url(), __( 'Register', 'dwqa' ), __( 'to Submit Answer', 'dwqa' ) );
-		?>
+		Чтобы ответить на этот вопрос, вам надо войти
+
 	</h3>
 	<div class="login-box">
 		<?php wp_login_form( array( 'redirect'  => get_post_permalink( $question_id ) ) ); ?>
 	</div>
+	<p>
+		<?php
+		printf( '%1$s <a href="%2$s" title="%3$s">%3$s</a>', 'Если у вас еще нет аккаунт на нашем сайте, вам надо', wp_registration_url(), 'зарегистрироваться' );
+		?>
+	</p>
 	<?php
 	}
 }
