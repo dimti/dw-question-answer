@@ -111,7 +111,7 @@ if ( dwqa_current_user_can( 'post_answer' ) ) {
 	</div>
 	<p>
 		<?php
-		printf( '%1$s <a href="%2$s" title="%3$s">%3$s</a>', 'Если у вас еще нет аккаунт на нашем сайте, вам надо', wp_registration_url(), 'зарегистрироваться' );
+		printf( '%1$s <a href="%2$s" title="%3$s">%3$s</a>', 'Если у вас еще нет аккаунта на нашем сайте, вам надо', wp_registration_url(), 'зарегистрироваться' );
 		?>
 	</p>
 	<?php
