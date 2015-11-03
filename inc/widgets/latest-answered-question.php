@@ -9,7 +9,7 @@ class DWQA_Latest_Answered_Question_Widget extends WP_Widget {
 	 **/
 	function __construct() {
 		$widget_ops = array( 'classname' => 'dwqa-widget dwqa-latest-answered-questions', 'description' => __( 'Show a list of questions that was ordered by answered time.', 'dwqa' ) );
-		$this->WP_Widget( 'dwqa-latest-answered-question', __( 'DWQA Latest Answered Questions', 'dwqa' ), $widget_ops );
+		parent::__construct( 'dwqa-latest-answered-question', __( 'DWQA Latest Answered Questions', 'dwqa' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {

@@ -107,11 +107,11 @@ if ( dwqa_current_user_can( 'post_answer' ) ) {
 
 	</h3>
 	<div class="login-box">
-		<?php wp_login_form( array( 'redirect'  => get_post_permalink( $question_id ) ) ); ?>
+		<?php wp_login_form( array( 'redirect'  => $redirect = get_post_permalink( $question_id ) ) ); ?>
 	</div>
 	<p>
 		<?php
-		printf( '%1$s <a href="%2$s" title="%3$s">%3$s</a>', 'Если у вас еще нет аккаунта на нашем сайте, вам надо', wp_registration_url(), 'зарегистрироваться' );
+		printf( '%1$s <a href="%2$s" onclick="event.preventDefault();jQuery(\'#redirect_to\').val(\'%4$s\');jQuery(\'#modal-registration\').modal(\'show\');" title="%3$s">%3$s</a>', 'Если у вас еще нет аккаунта на нашем сайте, вам надо', wp_registration_url(), 'зарегистрироваться', $redirect );
 		?>
 	</p>
 	<?php

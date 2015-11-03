@@ -520,7 +520,7 @@ function dwqa_columns_head( $defaults ) {
 			'dwqa-question' => __( 'In Response To', 'dwqa' ),
 		);
 	}
-	if ( $_GET['post_type'] == 'dwqa-question' ) {
+	if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == 'dwqa-question' ) {
 		$defaults['info'] = __( 'Info', 'dwqa' );
 		$defaults = dwqa_array_insert( $defaults, array( 'question-category' => 'Category', 'question-tag' => 'Tags' ), 1 );
 	}
