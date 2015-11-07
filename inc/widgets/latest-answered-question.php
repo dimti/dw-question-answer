@@ -18,10 +18,12 @@ class DWQA_Latest_Answered_Question_Widget extends WP_Widget {
 			'title' => __( 'Latest Answered Questions' , 'dwqa' ),
 			'number' => 5,
 		) );
+
+		$link = get_the_permalink(PERMANENT_ID_DWQA_QUESTIONS);
 		
 		echo $before_widget;
 		echo $before_title;
-		echo $instance['title'];
+		echo '<a href="' . $link . '"><h4 class="widget-title">' . $instance['title'] . '</h4></a>';
 		echo $after_title;
 		
 		$args = array(
