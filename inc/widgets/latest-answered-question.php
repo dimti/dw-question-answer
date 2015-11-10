@@ -35,13 +35,16 @@ class DWQA_Latest_Answered_Question_Widget extends WP_Widget {
 		);
 		$questions = new WP_Query( $args );
 		if ( $questions->have_posts() ) {
-			echo '<div class="dwqa-popular-questions">';
+			echo '<div class="dwqa-popular-questions hkb_widget_articles">';
 			echo '<ul>';
 			while ( $questions->have_posts() ) { $questions->the_post( );
 				echo '
-				<li><a href="'.get_permalink().'" class="question-title">'.get_the_title( ).'</a> '.__( 'asked by', 'dwqa' ).' ' . ( dwqa_is_anonymous( get_the_ID() ) ? __( 'Anonymous', 'dwqa' ) : get_the_author_link() ) . ', ' .  human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago';
+				<li class="latest-answered-question"><a href="'.get_permalink().'" class="question-title hkb-widget__entry-title">'.get_the_title( ).'</a> <span>'.__( 'asked by', 'dwqa' ).' ' . ( dwqa_is_anonymous( get_the_ID() ) ? __( 'Anonymous', 'dwqa' ) : get_the_author_link() ) . ', ' .  human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' назад</span>';
 				'</li>';
-			}   
+			}
+			echo '<li class="ht-kb-read-more">' .
+				'<a href="' . $link . '">Читать все</a>' .
+				'</li>';
 			echo '</ul>';
 			echo '</div>';
 		}
